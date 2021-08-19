@@ -1,5 +1,5 @@
 {% set name = "cryptacular" %}
-{% set version = "1.6.1" %}
+{% set version = "1.6.2" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,10 +7,7 @@ package:
 
 source:
   - url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-    sha256: f54337d1ab0cff000c0517967a9992c900018542cc2b0719872adfb615aee8a8
-    patches:
-      - 0001-inherit-ENV.patch
-      - 0002-define-PY_SSIZE_T_CLEAN-to-avoid-warning.patch
+    sha256: 7b529cb2b8a3c7e5be77921bf1ebc653d4d3a8f791375cc6f971b20db2404176
 
 build:
   number: 0
