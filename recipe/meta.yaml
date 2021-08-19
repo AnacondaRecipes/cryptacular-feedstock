@@ -37,15 +37,16 @@ test:
     - cryptacular
     - cryptacular.bcrypt
     - cryptacular.core
-    - cryptacular.crypt
+    - cryptacular.crypt # [not win]
     - cryptacular.pbkdf2
   requires:
     - nose
     - pytest
     - pytest-cov
   commands:
-    - pytest --cov=cryptacular --pyargs cryptacular
-
+    - pytest --cov=cryptacular --pyargs cryptacular # [not win]
+    # cannot import crypt on Windows:
+    - pytest --cov=cryptacular --pyargs cryptacular.core cryptacular.bcrypt cryptacular.pbkdf2 # [win]
 about:
   home: https://github.com/dholth/cryptacular/
   license: MIT
